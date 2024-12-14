@@ -6,11 +6,10 @@ def execute_update(fn):
     def wrapper(query_obj):
         mssql_db = get_secret()[0].split(':')
         conn_str = (
-            f"DRIVER={{ODBC Driver 17 for SQL Server}};"
+            f"DRIVER={{ODBC Driver 18 for SQL Server}};"
             f"SERVER={mssql_db[0]},{mssql_db[1]};"
-            f"DATABASE={mssql_db[2]};"
-            f"UID={mssql_db[3]};"
-            f"PWD={mssql_db[4]}"
+            f"UID={mssql_db[2]};"
+            f"PWD={mssql_db[3]}"
         )
         conn = pyodbc.connect(conn_str)
         cursor = conn.cursor()

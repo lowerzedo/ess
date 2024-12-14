@@ -1,6 +1,10 @@
 import os
 import json
 import boto3
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 
 def get_secret():
@@ -29,6 +33,9 @@ def get_secret():
 
         return gims_db
     else:
-        gims_db = os.environ.get('GIMS_DB')
+        mssql_db = os.environ.get('MSSQL_DB')
+        api_key = os.environ.get('API_KEY')
 
-        return gims_db
+        print(f"mssql_db: {mssql_db}")
+
+        return mssql_db, api_key

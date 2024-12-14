@@ -23,7 +23,7 @@ def create_app():
 
 app = create_app()  # Creating the app
 # Registering the blueprint
-app.register_blueprint(blueprint, url_prefix='/ess')
+app.register_blueprint(blueprint, url_prefix='/ess-temp')
 
 if APP_ENV != 'production':
     app.debug = True
