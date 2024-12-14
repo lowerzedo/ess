@@ -1,6 +1,6 @@
 from helpers.db_con import execute_update
 
-# @execute_update
+@execute_update
 def update_values(query_obj):
     return """
     UPDATE [dbo].[E_Schedules]
@@ -8,7 +8,7 @@ def update_values(query_obj):
         :column_name = :date
     WHERE nno IN (:nno);
     """
-# @execute_update
+@execute_update
 def update_values_i(query_obj):
     return """
     UPDATE [dbo].[I_Schedules]
